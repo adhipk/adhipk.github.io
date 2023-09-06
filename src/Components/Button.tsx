@@ -1,5 +1,5 @@
 import '../App.css';
-import '../Index.css';
+import '../index.css';
 
 export declare interface ButtonProps {
   id?: number;
