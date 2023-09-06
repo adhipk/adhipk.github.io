@@ -1,5 +1,5 @@
 import '../App.css';
-import '../Index.css';
+import '../index.css';
 import FindMe from './FindMe';
 import LongStory from './LongStory';
 import Tldr from './Tldr';
