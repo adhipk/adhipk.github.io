@@ -21,9 +21,6 @@ function App() {
         <Button selected={selected == 2} handleClick={()=>setSelected(2)}>
          Long Story
         </Button>
-        <Button selected = {selected == 3} handleClick={()=>setSelected(3)}>
-          Find Me Here
-        </Button>
         <Page selected={selected}></Page>
       </div>
       

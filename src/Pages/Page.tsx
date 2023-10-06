@@ -1,6 +1,5 @@
 import '../App.css';
 import '../index.css';
-import FindMe from './FindMe';
 import LongStory from './LongStory';
 import Tldr from './Tldr';
 export declare interface PageProps {
@@ -13,7 +12,6 @@ export default function Page(props:PageProps){
       <div className='content'>
         {(props.selected == 1) && (<Tldr></Tldr>)}
         {(props.selected == 2) && (<LongStory></LongStory>)}
-        {(props.selected == 3) && (<FindMe></FindMe>)}
       </div>
      
     );

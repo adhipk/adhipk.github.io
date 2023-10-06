@@ -3,7 +3,10 @@ import resumeUrl from '../assets/resume.pdf';
 export default function LongStory(){
     return (
         <div>
-            <div>
+            <Button handleClick={()=>null} selected={false}>
+                <a href={resumeUrl}>Full Resume</a>
+            </Button>
+            <div style={{padding:'1em 0'}}>
             I'm currently in my 3rd Semester at ASU, my classes are a mix of computer theory and interesting applications of computer science. For my coursework, I have had to build many interesting projects such as an end to end data pipeline using SQL, Apache Kafka, Kubernetes, and Neo4j.<br/>
                 During the summer, I worked as a Software Developer Intern at Induzbuy - a Bengaluru-based startup that connects industrial supplies customers with distributors. My role involved writing multiple scripts that parsed customer requirements and converted them into buy orders for the suppliers. Additionally, I led the effort to refactor the core PHP codebase into Laravel, which greatly improved the code maintainability through the utilization of its MVC architecture. <br/>
 
@@ -13,7 +16,7 @@ export default function LongStory(){
                 <ul className='techs'>
                     <li>python</li>
                     <li>PHP</li>
-                    <li>JavaScript</li>
+                    <li>JavaScript/TypeScript</li>
                     <li>nodeJS</li>
                     <li>SQL</li>
                     <li>Java</li>
@@ -54,9 +57,7 @@ export default function LongStory(){
             </div>
             </div>
             
-            <Button handleClick={()=>null} selected={false}>
-                <a href={resumeUrl}>Full Resume</a>
-            </Button>
+            
             
         </div>
     );
