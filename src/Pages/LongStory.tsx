@@ -1,6 +1,83 @@
+
 import Button from '../Components/Button';
+
 const resumeUrl = "https://drive.google.com/file/d/1-NV_aNd8K12xf6vlXMFnVfye0Uaqk4qG/view?usp=drive_link"
+import { useState, useEffect } from 'react';
+
+const TechList = () => {
+  const techList = [
+    'Python',
+    'PHP',
+    'JavaScript/TypeScript',
+    'nodeJS',
+    'SQL',
+    'Java',
+    'Apache Kafka',
+    'Kubernetes',
+    'C',
+    'C++',
+    'Laravel/Lumen',
+    'ReactJS + Redux',
+    'AngularJS',
+    'AWS',
+    'neo4j',
+    'Docker',
+    'Sentry',
+    'ElasticSearch',
+  ];
+
+  const techAbbreviations: { [key: string]: string } = {
+    Python: 'PY',
+    PHP: 'PHP',
+    'JavaScript/TypeScript': 'JS/TS',
+    nodeJS: 'NodeJS',
+    SQL: 'SQL',
+    Java: 'Java',
+    'Apache Kafka': 'Kafka',
+    Kubernetes: 'K8s',
+    C: 'C',
+    'C++': 'C++',
+    'Laravel/Lumen': 'Laravel/Lumen',
+    'ReactJS + Redux': 'React + Redux',
+    AngularJS: 'AngularJS',
+    AWS: 'AWS',
+    neo4j: 'Neo4j',
+    Docker: 'Docker',
+    Sentry: 'Sentry',
+    ElasticSearch: 'ElasticSearch',
+  };
+
+  const [showFullNames, setShowFullNames] = useState(true);
+
+  const handleResize = () => {
+    setShowFullNames(window.innerWidth > 768); // Change 768 to your desired breakpoint
+  };
+
+  useEffect(() => {
+    handleResize(); // Set the initial state
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const renderTechList = () => {
+    return (
+      <ul className='techs'>
+        {techList.map((tech) => (
+          <li key={tech}>
+            {showFullNames ? tech : techAbbreviations[tech]}
+          </li>
+        ))}
+      </ul>
+    );
+  };
+
+  return <div>{renderTechList()}</div>;
+};
+
 export default function LongStory(){
+    
     return (
         <div>
             <Button handleClick={()=>null} selected={false}>
@@ -13,26 +90,7 @@ export default function LongStory(){
                 Before that, I worked as a Software Developer at ICICI Lombard, one of the largest insurance companies in India. In this role, I led a team of four developers in a major overhaul of the customer portal, resulting in a simplified, mobile-first design built with ReactJS. I also developed a rule engine based on GraphDB using neo4j and Python, which helped in computing key components of the insurance premium.
                 <h3>Tech I've worked with</h3>
                 <div className='list-container'>
-                <ul className='techs'>
-                    <li>python</li>
-                    <li>PHP</li>
-                    <li>JavaScript/TypeScript</li>
-                    <li>nodeJS</li>
-                    <li>SQL</li>
-                    <li>Java</li>
-                    <li>Apache Kafka</li>
-                    <li>Kubernetes</li>
-                    <li>C</li>
-                    <li>C++</li>
-                    <li>Laravel/Lumen</li>
-                    <li>ReactJS + Redux</li>
-                    <li>AngularJS</li>
-                    <li>AWS</li>
-                    <li>neo4j</li>
-                    <li>Docker</li>
-                    <li>Sentry</li>
-                    <li>ElasticSearch</li>
-                </ul>
+                <TechList/>
             </div>
            
             <div className="list-container">
