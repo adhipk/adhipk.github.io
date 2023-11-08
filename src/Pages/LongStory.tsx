@@ -1,5 +1,5 @@
 import Button from '../Components/Button';
-import resumeUrl from '../assets/resume.pdf';
+const resumeUrl = "https://drive.google.com/file/d/1-NV_aNd8K12xf6vlXMFnVfye0Uaqk4qG/view?usp=drive_link"
 export default function LongStory(){
     return (
         <div>
