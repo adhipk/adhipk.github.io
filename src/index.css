@@ -33,7 +33,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.button {
   border-radius: 200px;
   
   border: 1px solid transparent;
@@ -43,6 +43,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #3a2d49;
+  color:#ffff;
   cursor: pointer;
   transition: border-color 0.25s;
   
@@ -51,11 +52,11 @@ button {
   background-color: #ffff;
   color:#1a1a1a;
 }
-button:hover {
+.button:hover {
   border-color: #3a2d49;
 }
-button:focus,
-button:focus-visible {
+.button:focus,
+.button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 .avatar{
@@ -110,4 +111,22 @@ button:focus-visible {
   .list-container {
     flex-direction: column;
   }
+}
+.projects{  
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:0 1em;
+    :is(a){
+        margin: 1em;
+    }
+    
+}
+.card{
+    /* background-color: #3a2d49; */
+    border: 1px solid #dad2e4;
+    border-radius: 20px;
+    padding: 1em;
+    margin: 1em;
+    color:#ffff;
 }

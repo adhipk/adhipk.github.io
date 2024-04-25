@@ -13,7 +13,7 @@ export declare interface ButtonProps {
 }
 export default function Button(props:ButtonProps){
     return (
-        <button onClick={() => props.handleClick()} className={props.selected ? 'selected':''}>
+        <button onClick={() => props.handleClick()} className={props.selected ? 'button selected' : 'button'}>
           {props.children}
         </button>
     );
