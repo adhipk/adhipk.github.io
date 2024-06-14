@@ -97,7 +97,7 @@ export default function LongStory(){
             </div>
            
             <div className="list-container">
-                <div > 
+                <div className='flex'> 
                     <p>Some Courses I've Completed</p>
                     <ul>
                         <li>Combinatorial Algorithms and Intractability</li>

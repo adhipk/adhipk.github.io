@@ -13,9 +13,10 @@ posthog.init('phc_woMmiIYR3KNirZeF821rJwmaXgmZ3laQnluNkjZtjKo',
 )
 function App() {
   const [selected, setSelected] = useState('tldr');
+  posthog.capture('$pageview')
   const handleClick = (selection:string)=>{
 
-    posthog.capture('Button Click', { property: selection })
+    posthog.capture("button_clicked", { name: selection })
     setSelected(selection)
   }
   const resumeUrl = "https://drive.google.com/file/d/1-NV_aNd8K12xf6vlXMFnVfye0Uaqk4qG/view?usp=drive_link"
