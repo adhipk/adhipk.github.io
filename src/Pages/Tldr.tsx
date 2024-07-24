@@ -3,8 +3,8 @@ export default function Tldr(){
     return (
         <div>
         
-        Hi, I'm Adhip! I'm a Full-Stack Software Developer, currently pursuing a master’s in computer science at Arizona State University.<br/>
-        I'm interested in computer science theory and its real-world applications. Looking for full-time Software developer roles.
+        Hi, I'm Adhip! I'm a Full-Stack Software Developer, and recent M.S Computer Science graduate from Arizona State University.<br/>
+        I'm interested in Full stack web Development and AI. Looking for full-time Software developer roles.
         <FindMe/>
 
         </div>
