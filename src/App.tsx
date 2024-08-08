@@ -19,7 +19,7 @@ function App() {
     posthog.capture("button_clicked", { name: selection })
     setSelected(selection)
   }
-  const resumeUrl = "https://drive.google.com/file/d/1-NV_aNd8K12xf6vlXMFnVfye0Uaqk4qG/view?usp=drive_link"
+  const resumeUrl = "https://resume.adhipk.dev";
   return (
     <>
       <div className='avatar'>
@@ -38,7 +38,7 @@ function App() {
         <Button selected={selected == 'projects'} handleClick={()=>handleClick('projects')}>
           Projects
         </Button>
-          <a className='button' href={resumeUrl} onClick={()=>handleClick('resume')}>Full Resume</a>
+          <a className='button' href={resumeUrl} onClick={()=>handleClick('resume')} >Full Resume</a>
             
         <Page selected={selected}></Page>
       </div>
