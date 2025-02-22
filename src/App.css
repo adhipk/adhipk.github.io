@@ -1,7 +1,4 @@
 @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 /* CSS */
 
 :root {
@@ -105,15 +102,8 @@ h1 {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #3a2d49;
-  }
   button {
     background-color: #f8f8f8;
-  }
-  .selected {
-    background-color: #3a2d49;
-    color:#ffff;
   }
 }
 @media (max-width: 800px) {
@@ -137,7 +127,6 @@ h1 {
     border-radius: 20px;
     padding: 1em;
     margin: 1em;
-    color:#ffff;
 }
 ul{
   list-style: "-> ";
@@ -168,7 +157,7 @@ ul{
   columns: 2;
   -webkit-columns: 2;
   -moz-columns: 2;
-  li{
+  :is(li){
     margin-inline:10px;
   }
 }

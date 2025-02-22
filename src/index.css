@@ -96,9 +96,7 @@ h1 {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #3a2d49;
-  }
+
   button {
     background-color: #f8f8f8;
   }
@@ -121,12 +119,4 @@ h1 {
         margin: 1em;
     }
     
-}
-.card{
-    /* background-color: #3a2d49; */
-    border: 1px solid #dad2e4;
-    border-radius: 20px;
-    padding: 1em;
-    margin: 1em;
-    color:#ffff;
 }
