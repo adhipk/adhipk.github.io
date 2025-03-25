@@ -26,9 +26,10 @@ function App() {
         <img src= {imgUrl} className='profile-pic'></img>
       </div>
       <h2>Adhip Kashyap</h2>
-      <h3>Software Developer | CS Grad Student @ ASU</h3>
-      <h3>Tempe, AZ</h3>
+      <h3>Software Engineer</h3>
+      <h3>Santa Clara, California</h3>
       <div >
+        <div className='button-group'>
         <Button selected={selected == 'tldr'} handleClick={()=>handleClick('tldr')}>
           TL;DR
         </Button>
@@ -39,6 +40,8 @@ function App() {
           Projects
         </Button>
           <a className='button' href={resumeUrl} onClick={()=>handleClick('resume')} >Full Resume</a>
+          
+        </div>
             
         <Page selected={selected}></Page>
       </div>

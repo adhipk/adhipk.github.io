@@ -1,13 +1,14 @@
 /* CSS */
 @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+@import "gruvbox.css";
 :root {
   font-family: 'Fira Code', monospace;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: var(--fg);
+  background-color: var(--bg);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,8 +43,8 @@ h1 {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #3a2d49;
-  color:#ffff;
+  background-color: var(--orange-dim);
+  color:var(--fg);
   cursor: pointer;
   transition: border-color 0.25s;
   
@@ -53,14 +54,14 @@ h1 {
   color:#1a1a1a;
 }
 .button:hover {
-  border-color: #3a2d49;
+  border-color: var(--fg);
 }
 .button:focus,
 .button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 .avatar{
-  background-color: #3a2d49;
+  background-color: var(--orange-dim);
   border-radius: 50%;
   height: 250px;
   margin: 2rem auto;
@@ -91,20 +92,6 @@ h1 {
   
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  button {
-    background-color: #f8f8f8;
-  }
-  .selected {
-    background-color: #3a2d49;
-    color:#ffff;
-  }
-}
 @media (max-width: 800px) {
   .list-container {
     flex-direction: column;
