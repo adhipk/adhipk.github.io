@@ -1,7 +1,6 @@
 
 
 import { useState, useEffect } from 'react';
-import Resume from './Resume';
 
 const TechList = () => {
   const techList = [
@@ -83,9 +82,32 @@ export default function LongStory(){
     return (
         <div>
             <div style={{padding:'1em 0'}}>
-                <Resume />
+                <div style={{marginBottom:'2em', padding:'2em', backgroundColor:'rgba(255,149,0,0.1)', borderRadius:'8px', border:'1px solid rgba(255,149,0,0.2)'}}>
+                    <h3 style={{margin:'0 0 0.5em 0'}}>📄 Full Experience</h3>
+                    <p>For my complete resume, work history, projects, and detailed achievements, visit:</p>
+                    <a 
+                        href="https://resume.adhipk.dev" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{
+                            display:'inline-block',
+                            marginTop:'1em',
+                            padding:'0.75em 1.5em',
+                            backgroundColor:'#ff9500',
+                            color:'#fff',
+                            textDecoration:'none',
+                            borderRadius:'4px',
+                            fontWeight:'bold',
+                            transition:'background-color 0.3s'
+                        }}
+                        onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#e68900')}
+                        onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#ff9500')}
+                    >
+                        📄 View Full Resume
+                    </a>
+                </div>
 
-                <h3 style={{marginTop:'3em'}}>Tech I've worked with</h3>
+                <h3>Tech I've worked with</h3>
                 <div className='list-container'>
                 <TechList/>
             </div>
