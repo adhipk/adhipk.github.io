@@ -303,3 +303,39 @@ ul{
   flex-wrap: wrap;
   justify-content: center;
 }
+
+/* Resume embed styling */
+.resume-content {
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.resume-content h1,
+.resume-content h2,
+.resume-content h3 {
+  color: inherit;
+  font-family: inherit;
+}
+
+.resume-content a {
+  color: #ff9500;
+  text-decoration: none;
+}
+
+.resume-content a:hover {
+  color: #e68900;
+  text-decoration: underline;
+}
+
+/* Override any conflicting styles from the embedded resume */
+.resume-content * {
+  font-family: 'Fira Code', monospace;
+}
+
+@media (max-width: 800px) {
+  .resume-content {
+    max-width: 100%;
+    padding: 0;
+  }
+}
