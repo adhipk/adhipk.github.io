@@ -11,6 +11,17 @@
   }
 }
 
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 :root {
   font-family: 'Fira Code', monospace;
   line-height: 1.5;
@@ -58,11 +69,23 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #ff9500;
+  margin: 0.5em 0;
+}
+
+h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  font-size: 1.3em;
 }
 
 .button {
-  border-radius: 200px;
-  
+  border-radius: 8px;
   border: 1px solid transparent;
   box-shadow: var(--orange-dim);
   padding: 0.6em 1.2em;
@@ -71,27 +94,35 @@ h1 {
   font-weight: 500;
   font-family: inherit;
   background-color: var(--orange-dim);
-  color:#ffff;
+  color: #ffff;
   cursor: pointer;
-  transition: border-color 0.25s;
-  
+  transition: all 0.3s ease;
 }
+
 .selected {
   background-color: #ffff;
-  color:#1a1a1a;
+  color: #1a1a1a;
+  border-color: #ff9500;
 }
-.button:hover {
-  border-color: #3a2d49;
+
+.button:hover:not(.selected) {
+  background-color: #ff9500;
+  border-color: #ff9500;
+  box-shadow: 0 4px 12px rgba(255, 149, 0, 0.3);
+  transform: translateY(-2px);
 }
+
 .button:focus,
 .button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 2px solid #ff9500;
+  outline-offset: 2px;
 }
 .avatar{
   border-radius: 50%;
   height: 250px;
   margin: 2rem auto;
   width: 250px;
+  animation: slideInDown 0.5s ease-out;
 }
 .profile-pic{
   width:100%;
@@ -111,11 +142,9 @@ h1 {
 }
 .content{
   margin: 1em auto;
-
   max-width: 50em;
-
   width: 100%;
-  
+  animation: fadeIn 0.4s ease-in;
 }
 
 @media (prefers-color-scheme: light) {
@@ -136,11 +165,12 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding:0 1em;
-    :is(a){
-        margin: 1em;
-    }
-    
+    padding: 1em;
+    gap: 1em;
+}
+
+.projects a {
+    margin: 0;
 }
 .card{
     /* background-color: #3a2d49; */
