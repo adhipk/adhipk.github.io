@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /assets/
+
+Sitemap: https://adhipk.dev/sitemap.xml
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: Googlebot
+Allow: /

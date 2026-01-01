@@ -2,41 +2,40 @@ import '../App.css'
 
 export default function Projects(){
     return (
-        <div>
-
-            <p>I build webapps in my freetime, Here are some of them. Check out my github for more</p>
+        <section aria-label="Projects">
+            <p>I build full-featured applications that solve real problems. Check out my <a href="https://github.com/adhipk">GitHub</a> for more projects</p>
             <div className='projects'>
 
                     
-                    <div className="card" style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
-                        <h4>LibriCasts</h4>
+                    <article className="card" style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
+                        <h3>LibriCasts</h3>
                         <div className="links-container">
                             <p>
-                                <a href="https://libricasts.adhipk.dev/">Demo</a> 
+                                <a href="https://libricasts.adhipk.dev/" title="Live demo of LibriCasts">Demo</a> 
                             </p>
                             <p>
-                                <a href="https://github.com/adhipk/libricasts">Source Code</a>
+                                <a href="https://github.com/adhipk/libricasts" title="LibriCasts GitHub repository">Source Code</a>
                             </p>
                            
                         </div>
-                        <p>A Flask + HTMX tool to parse rss feeds from LibriVox, reformats it and uploads it to PocketCasts </p>
+                        <p>Open-source tool that parses LibriVox RSS feeds and seamlessly integrates audiobooks into PocketCasts, enabling thousands of users to access free literature</p>
                         
-                    </div>
-                    <div className="card" style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
-                        <h4>Chasing Squirrels</h4>
+                    </article>
+                    <article className="card" style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
+                        <h3>Chasing Squirrels</h3>
                         <div className="links-container">
                             <p>
-                            <a href="https://chasing-squirrels.adhipk.dev/">Demo</a> 
+                            <a href="https://chasing-squirrels.adhipk.dev/" title="Interactive visualization of squirrel sightings in Central Park">Demo</a> 
                             </p>
                             <p>
-                                <a href="https://github.com/adhipk/chasing_squirrels">Repo</a>
+                                <a href="https://github.com/adhipk/chasing_squirrels" title="Chasing Squirrels GitHub repository">Repo</a>
                             </p>
                         </div>
-                        <p>An Interactive Visualization of squirrel sightings in Central Park. Built using JS and d3</p>
-                    </div>
+                        <p>Interactive data visualization exploring patterns in Central Park squirrel sightings using JavaScript and D3.js. Demonstrates ability to transform raw datasets into intuitive, explorable visualizations</p>
+                    </article>
                     
                 </div>
-            </div>
+            </section>
 
     );
 }

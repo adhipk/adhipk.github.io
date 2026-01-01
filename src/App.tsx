@@ -22,29 +22,48 @@ function App() {
   const resumeUrl = "https://resume.adhipk.dev";
   return (
     <>
-      <div className='avatar'>
-        <img src= {imgUrl} className='profile-pic'></img>
-      </div>
-      <h2>Adhip Kashyap</h2>
-      <h3>Software Engineer</h3>
-      <h3>Santa Clara, California</h3>
-      <div >
-        <div className='button-group'>
-        <Button selected={selected == 'tldr'} handleClick={()=>handleClick('tldr')}>
-          TL;DR
-        </Button>
-        <Button selected={selected == 'long_story'} handleClick={()=>handleClick('long_story')}>
-         Long Story
-        </Button>
-        <Button selected={selected == 'projects'} handleClick={()=>handleClick('projects')}>
-          Projects
-        </Button>
-          <a className='button' href={resumeUrl} onClick={()=>handleClick('resume')} >Full Resume</a>
-          
+      <main role="main">
+        <div className='avatar'>
+          <img src={imgUrl} className='profile-pic' alt="Adhip Kashyap - Client Solutions Architect" title="Adhip Kashyap" />
         </div>
+        <div>
+          <h1>Adhip Kashyap</h1>
+          <h2>Client Solutions Architect at TechAhead</h2>
+          <p>Thousand Oaks, California</p>
+        </div>
+        <nav>
+          <div className='button-group' role="tablist">
+          <Button 
+            selected={selected == 'tldr'} 
+            handleClick={()=>handleClick('tldr')}
+            role="tab"
+            aria-selected={selected == 'tldr'}
+          >
+            TL;DR
+          </Button>
+          <Button 
+            selected={selected == 'long_story'} 
+            handleClick={()=>handleClick('long_story')}
+            role="tab"
+            aria-selected={selected == 'long_story'}
+          >
+           Long Story
+          </Button>
+          <Button 
+            selected={selected == 'projects'} 
+            handleClick={()=>handleClick('projects')}
+            role="tab"
+            aria-selected={selected == 'projects'}
+          >
+            Projects
+          </Button>
+            <a className='button' href={resumeUrl} onClick={()=>handleClick('resume')} title="Download full resume">Full Resume</a>
+          </div>
+          </nav>
             
-        <Page selected={selected}></Page>
-      </div>
+          <Page selected={selected}></Page>
+        </div>
+      </main>
       
     </>
   )

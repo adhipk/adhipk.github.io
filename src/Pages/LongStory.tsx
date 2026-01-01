@@ -83,13 +83,16 @@ export default function LongStory(){
 
             <div style={{padding:'1em 0'}}>
                 <p>
-                  I recently graduated from ASU with a Master's in Computer Science. For my coursework, I have had to build many interesting projects such as an end to end data processing pipeline using SQL, Apache Kafka, Kubernetes, and Neo4j.
+                  At TechAhead, I architect scalable backend solutions and design AI integration strategies for enterprise clients. I translate complex technical requirements into comprehensive cost proposals and actionable infrastructure recommendations that drive competitive advantage.
                 </p>
                 <p>
-                  Last Summer, I interned at Induzbuy - a Bengaluru based startup that connects industrial supplies customers with distributors. My role involved writing scripts to parse customer requirements and process the data into buy orders for the suppliers. Additionally, I led the refactoring of the PHP codebase to Laravel, which greatly improved the maintainability.
+                  At Hoag Hospital, I engineered production AI call center agents handling autonomous appointment booking. I architected agent configuration management with infrastructure-as-code practices and built deployment automation reducing deployment times by 80%. I developed robust integrations with Epic EHR enabling autonomous imaging appointment management, while building automated compliance testing harnesses that connect to Vapi. I also created intelligent test case generation from transcripts, accelerating regression testing cycles by 60%.
                 </p>
                 <p>
-                  Before that, I worked as a Software Developer at ICICI Lombard, one of the largest insurance companies in India for 3 years. In this role, I led a team of four developers in a major overhaul of the customer portal, resulting in a simplified, mobile-first design built with ReactJS. I also developed a graphDB based rule engine using neo4j and Python, which helped in computing key components of the insurance premium.
+                  At Induzbuy, I developed intelligent parsing systems leveraging GPT-3 and similarity metrics to normalize supplier catalogs with 95% accuracy. I spearheaded the architectural migration from legacy PHP to Laravel, establishing modular design patterns that significantly improved system maintainability.
+                </p>
+                <p>
+                  At ICICI Lombard (3 years), I designed and led a high-impact customer portal overhaul, implementing a mobile-first architecture with ReactJS that drove a 42% reduction in checkout abandonment. I engineered a GraphDB-based rule engine in Neo4j and Python for dynamic premium computation, delivering 40% performance improvements in critical insurance calculation workflows.
                 </p>
                 <h3>Tech I've worked with</h3>
                 <div className='list-container'>
