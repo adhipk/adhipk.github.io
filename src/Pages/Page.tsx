@@ -11,7 +11,9 @@ export declare interface PageProps {
 
 export default function Page(props:PageProps){
     return (
-      <div className='content'>
+      <div className='content' style={{
+        animation: 'fadeIn 0.3s ease-in'
+      }}>
         {(props.selected == 'tldr') && (<Tldr></Tldr>)}
         {(props.selected == 'long_story') && (<LongStory></LongStory>)}
         {(props.selected == 'projects') && (<Projects></Projects>)}

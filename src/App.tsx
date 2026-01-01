@@ -19,19 +19,29 @@ function App() {
     posthog.capture("button_clicked", { name: selection })
     setSelected(selection)
   }
-  const resumeUrl = "https://resume.adhipk.dev";
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    const tabs = ['tldr', 'long_story', 'projects'];
+    const currentIndex = tabs.indexOf(selected);
+    
+    if (e.key === 'ArrowRight' && currentIndex < tabs.length - 1) {
+      handleClick(tabs[currentIndex + 1]);
+    } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
+      handleClick(tabs[currentIndex - 1]);
+    }
+  };
+
   return (
     <>
       <main role="main">
         <div className='avatar'>
-          <img src={imgUrl} className='profile-pic' alt="Adhip Kashyap - Client Solutions Architect" title="Adhip Kashyap" />
+          <img src={imgUrl} className='profile-pic' alt="Adhip Kashyap - AI Software Engineer at Hoag Hospital" title="Adhip Kashyap" />
         </div>
         <div>
           <h1>Adhip Kashyap</h1>
-          <h2>Client Solutions Architect at TechAhead</h2>
+          <h2>AI Software Engineer at Hoag Hospital</h2>
           <p>Thousand Oaks, California</p>
         </div>
-        <nav>
+        <nav onKeyDown={handleKeyDown}>
           <div className='button-group' role="tablist">
           <Button 
             selected={selected == 'tldr'} 
@@ -39,7 +49,7 @@ function App() {
             role="tab"
             aria-selected={selected == 'tldr'}
           >
-            TL;DR
+            Overview
           </Button>
           <Button 
             selected={selected == 'long_story'} 
@@ -47,7 +57,7 @@ function App() {
             role="tab"
             aria-selected={selected == 'long_story'}
           >
-           Long Story
+            Experience
           </Button>
           <Button 
             selected={selected == 'projects'} 
@@ -57,12 +67,10 @@ function App() {
           >
             Projects
           </Button>
-            <a className='button' href={resumeUrl} onClick={()=>handleClick('resume')} title="Download full resume">Full Resume</a>
           </div>
-          </nav>
+        </nav>
             
-          <Page selected={selected}></Page>
-        </div>
+        <Page selected={selected}></Page>
       </main>
       
     </>

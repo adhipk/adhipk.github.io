@@ -18,7 +18,7 @@ export default function Projects(){
                             </p>
                            
                         </div>
-                        <p>Open-source tool that parses LibriVox RSS feeds and seamlessly integrates audiobooks into PocketCasts, enabling thousands of users to access free literature</p>
+                        <p>Open-source tool that parses LibriVox RSS feeds and seamlessly integrates audiobooks into PocketCasts, enabling thousands of users to access free literature. Built with Flask, HTMX, and GitHub Gists for automated deployment.</p>
                         
                     </article>
                     <article className="card" style={{display:'flex',flexDirection:'column', alignItems:'center'}}>
@@ -31,7 +31,7 @@ export default function Projects(){
                                 <a href="https://github.com/adhipk/chasing_squirrels" title="Chasing Squirrels GitHub repository">Repo</a>
                             </p>
                         </div>
-                        <p>Interactive data visualization exploring patterns in Central Park squirrel sightings using JavaScript and D3.js. Demonstrates ability to transform raw datasets into intuitive, explorable visualizations</p>
+                        <p>Interactive data visualization exploring patterns in Central Park squirrel sightings. Transforms raw datasets into intuitive, explorable visualizations. Built with JavaScript, D3.js for interactive charts, and React for responsive UI components</p>
                     </article>
                     
                 </div>

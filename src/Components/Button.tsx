@@ -9,11 +9,18 @@ export declare interface ButtonProps {
   onChange?: React.FormEventHandler<HTMLInputElement>; // form events! the generic parameter is the type of event.target
   handleClick: () => void;
   selected: boolean;
+  role?: string;
+  "aria-selected"?: boolean;
   //  more info: https://react-typescript-cheatsheet.netlify.app/docs/advanced/patterns_by_usecase/#wrappingmirroring
 }
 export default function Button(props:ButtonProps){
     return (
-        <button onClick={() => props.handleClick()} className={props.selected ? 'button selected' : 'button'}>
+        <button 
+          onClick={() => props.handleClick()} 
+          className={props.selected ? 'button selected' : 'button'}
+          role={props.role}
+          aria-selected={props["aria-selected"]}
+        >
           {props.children}
         </button>
     );

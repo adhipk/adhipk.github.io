@@ -1,7 +1,5 @@
 
 
-
-
 import { useState, useEffect } from 'react';
 
 const TechList = () => {
@@ -50,11 +48,11 @@ const TechList = () => {
   const [showFullNames, setShowFullNames] = useState(true);
 
   const handleResize = () => {
-    setShowFullNames(window.innerWidth > 768); // Change 768 to your desired breakpoint
+    setShowFullNames(window.innerWidth > 768);
   };
 
   useEffect(() => {
-    handleResize(); // Set the initial state
+    handleResize();
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -77,23 +75,38 @@ const TechList = () => {
 };
 
 export default function LongStory(){
-    
+    const scrollToTop = () => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+
     return (
         <div>
-
             <div style={{padding:'1em 0'}}>
-                <p>
-                  At TechAhead, I architect scalable backend solutions and design AI integration strategies for enterprise clients. I translate complex technical requirements into comprehensive cost proposals and actionable infrastructure recommendations that drive competitive advantage.
-                </p>
-                <p>
-                  At Hoag Hospital, I engineered production AI call center agents handling autonomous appointment booking. I architected agent configuration management with infrastructure-as-code practices and built deployment automation reducing deployment times by 80%. I developed robust integrations with Epic EHR enabling autonomous imaging appointment management, while building automated compliance testing harnesses that connect to Vapi. I also created intelligent test case generation from transcripts, accelerating regression testing cycles by 60%.
-                </p>
-                <p>
-                  At Induzbuy, I developed intelligent parsing systems leveraging GPT-3 and similarity metrics to normalize supplier catalogs with 95% accuracy. I spearheaded the architectural migration from legacy PHP to Laravel, establishing modular design patterns that significantly improved system maintainability.
-                </p>
-                <p>
-                  At ICICI Lombard (3 years), I designed and led a high-impact customer portal overhaul, implementing a mobile-first architecture with ReactJS that drove a 42% reduction in checkout abandonment. I engineered a GraphDB-based rule engine in Neo4j and Python for dynamic premium computation, delivering 40% performance improvements in critical insurance calculation workflows.
-                </p>
+                <div style={{marginBottom:'2em', padding:'2em', backgroundColor:'rgba(255,149,0,0.1)', borderRadius:'8px', border:'1px solid rgba(255,149,0,0.2)'}}>
+                    <h3 style={{margin:'0 0 0.5em 0'}}>📄 Full Experience</h3>
+                    <p>For my complete resume, work history, projects, and detailed achievements, visit:</p>
+                    <a 
+                        href="https://resume.adhipk.dev" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        style={{
+                            display:'inline-block',
+                            marginTop:'1em',
+                            padding:'0.75em 1.5em',
+                            backgroundColor:'#ff9500',
+                            color:'#fff',
+                            textDecoration:'none',
+                            borderRadius:'4px',
+                            fontWeight:'bold',
+                            transition:'background-color 0.3s'
+                        }}
+                        onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#e68900')}
+                        onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#ff9500')}
+                    >
+                        📄 View Full Resume
+                    </a>
+                </div>
+
                 <h3>Tech I've worked with</h3>
                 <div className='list-container'>
                 <TechList/>
@@ -113,8 +126,32 @@ export default function LongStory(){
                 </div>
             </div>
             </div>
-            
-            
+
+            <button
+                onClick={scrollToTop}
+                style={{
+                    marginTop:'2em',
+                    padding:'0.5em 1em',
+                    backgroundColor:'rgba(255,149,0,0.2)',
+                    border:'1px solid #ff9500',
+                    color:'#ff9500',
+                    borderRadius:'4px',
+                    cursor:'pointer',
+                    fontWeight:'bold',
+                    transition:'all 0.3s'
+                }}
+                onMouseOver={(e) => {
+                    e.currentTarget.style.backgroundColor = '#ff9500';
+                    e.currentTarget.style.color = '#fff';
+                }}
+                onMouseOut={(e) => {
+                    e.currentTarget.style.backgroundColor = 'rgba(255,149,0,0.2)';
+                    e.currentTarget.style.color = '#ff9500';
+                }}
+                title="Scroll back to top"
+            >
+                ⬆️ Back to Top
+            </button>
             
         </div>
     );

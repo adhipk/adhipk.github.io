@@ -1,6 +1,16 @@
 @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
 /* CSS */
 @import url("gruvbox.css");
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 :root {
   font-family: 'Fira Code', monospace;
   line-height: 1.5;
@@ -24,6 +34,18 @@
 a {
   font-weight: 500;
   text-decoration: inherit;
+  color: #ff9500;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #e68900;
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid #ff9500;
+  outline-offset: 2px;
 }
 
 
@@ -126,6 +148,13 @@ h1 {
     border-radius: 20px;
     padding: 1em;
     margin: 1em;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #ff9500;
+    box-shadow: 0 4px 12px rgba(255, 149, 0, 0.15);
+    transform: translateY(-4px);
 }
 ul{
   list-style: "-> ";
