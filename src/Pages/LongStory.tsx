@@ -18,7 +18,13 @@ const ResumeEmbed = () => {
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
 
-        // Get the body content only - no external styles
+        // Remove the large profile picture (it's in a div with class "web-only" at the top)
+        const profilePicDiv = doc.querySelector('div[style*="text-align: center"]');
+        if (profilePicDiv && profilePicDiv.querySelector('img[src="profile_pic.png"]')) {
+          profilePicDiv.remove();
+        }
+
+        // Get the body content only - no external styles, no profile pic
         const bodyContent = doc.body.innerHTML;
 
         // Use only our portfolio's CSS by wrapping in resume-content div
