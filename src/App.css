@@ -259,6 +259,96 @@ h3 {
   animation: fadeIn 0.4s ease-out;
 }
 
+@media print {
+  body {
+    padding-top: 0;
+    background-color: white;
+    color: black;
+  }
+
+  .top-bar {
+    display: none;
+  }
+
+  .hero-section {
+    display: none;
+  }
+
+  .button-group {
+    display: none;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .socials {
+    display: none;
+  }
+
+  .main-content {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .content {
+    padding-top: 0;
+  }
+
+  .resume-content {
+    color: black !important;
+    background: white !important;
+  }
+
+  .resume-content h1,
+  .resume-content h2,
+  .resume-content h3,
+  .resume-content h4,
+  .resume-content h5,
+  .resume-content h6,
+  .resume-content p,
+  .resume-content ul,
+  .resume-content ol,
+  .resume-content li {
+    color: black !important;
+  }
+
+  .resume-content a {
+    color: #0066cc !important;
+    text-decoration: underline !important;
+  }
+
+  .card {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    transform: none !important;
+  }
+
+  /* Ensure projects don't break awkwardly */
+  .projects article {
+    page-break-inside: avoid;
+  }
+
+  /* Hide interactive elements */
+  button,
+  .button {
+    display: none;
+  }
+
+  /* Show links in print */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+  }
+
+  /* Don't show href for internal navigation */
+  a[href^="#"]:after {
+    content: "";
+  }
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

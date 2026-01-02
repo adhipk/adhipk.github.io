@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Button from './Components/Button';
 import Page from './Pages/Page';
-import imgUrl from '/assets/profile_pic.jpeg';
+import imgUrl from '/assets/profile_pic.png';
 import posthog from 'posthog-js'
 
 // Initialize PostHog only once
