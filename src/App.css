@@ -441,35 +441,139 @@ ul{
 /* Resume embed styling */
 .resume-content {
   text-align: left;
-  max-width: 100%;
-  margin: 0 auto;
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.87);
+  background: transparent;
 }
 
-.resume-content h1,
-.resume-content h2,
+/* Override any width constraints from the embedded resume */
+.resume-content *,
+.resume-content html,
+.resume-content body,
+.resume-content main,
+.resume-content div,
+.resume-content section,
+.resume-content article,
+.resume-content #root {
+  max-width: 100% !important;
+  font-family: 'Fira Code', monospace !important;
+  box-sizing: border-box;
+}
+
+.resume-content h1 {
+  color: rgba(255, 255, 255, 0.87) !important;
+  font-size: 2em !important;
+  margin: 0.5em 0 !important;
+  font-weight: 600 !important;
+}
+
+.resume-content h2 {
+  color: #ff9500 !important;
+  font-size: 1.3em !important;
+  margin: 1em 0 0.5em 0 !important;
+  font-weight: 600 !important;
+}
+
 .resume-content h3 {
-  color: inherit;
-  font-family: inherit;
+  color: rgba(255, 255, 255, 0.87) !important;
+  font-size: 1.1em !important;
+  margin: 0.8em 0 0.4em 0 !important;
+  font-weight: 500 !important;
+}
+
+.resume-content h4,
+.resume-content h5,
+.resume-content h6 {
+  color: rgba(255, 255, 255, 0.87) !important;
+  font-weight: 500 !important;
+}
+
+.resume-content p {
+  color: rgba(255, 255, 255, 0.87) !important;
+  line-height: 1.6 !important;
+  margin: 0.5em 0 !important;
+}
+
+.resume-content ul,
+.resume-content ol {
+  color: rgba(255, 255, 255, 0.87) !important;
+  padding-left: 1.5em !important;
+  margin: 0.5em 0 !important;
+}
+
+.resume-content li {
+  color: rgba(255, 255, 255, 0.87) !important;
+  margin: 0.3em 0 !important;
+  line-height: 1.5 !important;
+}
+
+.resume-content strong,
+.resume-content b {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 600 !important;
+}
+
+.resume-content em,
+.resume-content i {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .resume-content a {
-  color: #ff9500;
-  text-decoration: none;
+  color: #ff9500 !important;
+  text-decoration: none !important;
 }
 
 .resume-content a:hover {
-  color: #e68900;
-  text-decoration: underline;
-}
-
-/* Override any conflicting styles from the embedded resume */
-.resume-content * {
-  font-family: 'Fira Code', monospace;
+  color: #e68900 !important;
+  text-decoration: underline !important;
 }
 
 @media (max-width: 800px) {
   .resume-content {
     max-width: 100%;
     padding: 0;
+  }
+
+  .resume-content h1 {
+    font-size: 1.6em !important;
+  }
+
+  .resume-content h2 {
+    font-size: 1.2em !important;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .resume-content {
+    color: #213547;
+  }
+
+  .resume-content h1,
+  .resume-content h3,
+  .resume-content h4,
+  .resume-content h5,
+  .resume-content h6,
+  .resume-content p,
+  .resume-content ul,
+  .resume-content ol,
+  .resume-content li {
+    color: #213547 !important;
+  }
+
+  .resume-content h2 {
+    color: #ff9500 !important;
+  }
+
+  .resume-content strong,
+  .resume-content b {
+    color: #000 !important;
+  }
+
+  .resume-content em,
+  .resume-content i {
+    color: #4a4a4a !important;
   }
 }

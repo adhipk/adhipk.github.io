@@ -14,20 +14,15 @@ const ResumeEmbed = () => {
         }
         const html = await response.text();
 
-        // Extract the content inside the <body> tag and the styles
+        // Extract the content inside the <body> tag WITHOUT the external styles
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
 
-        // Get all style tags and link tags for CSS
-        const styles = Array.from(doc.querySelectorAll('style, link[rel="stylesheet"]'))
-          .map(el => el.outerHTML)
-          .join('\n');
-
-        // Get the body content
+        // Get the body content only - no external styles
         const bodyContent = doc.body.innerHTML;
 
-        // Combine styles and content
-        setResumeHTML(`${styles}\n<div class="resume-content">${bodyContent}</div>`);
+        // Use only our portfolio's CSS by wrapping in resume-content div
+        setResumeHTML(bodyContent);
         setLoading(false);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'An error occurred');
@@ -64,6 +59,7 @@ const ResumeEmbed = () => {
 
   return (
     <div
+      className="resume-content"
       dangerouslySetInnerHTML={{ __html: resumeHTML }}
       style={{
         width: '100%',
@@ -75,19 +71,8 @@ const ResumeEmbed = () => {
 
 export default function LongStory(){
     return (
-        <div>
-            <div style={{padding:'1em 0'}}>
-                <div style={{
-                    marginBottom:'2em',
-                    padding:'2em',
-                    backgroundColor:'rgba(255,149,0,0.05)',
-                    borderRadius:'8px',
-                    border:'1px solid rgba(255,149,0,0.2)'
-                }}>
-                    <ResumeEmbed />
-                </div>
-            </div>
-
+        <div style={{width: '100%', maxWidth: '100%'}}>
+            <ResumeEmbed />
         </div>
     );
 }
