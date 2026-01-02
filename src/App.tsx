@@ -37,13 +37,15 @@ function App() {
     <>
       <header className='top-bar'>
         <div className='top-bar-content'>
-          <div className='profile-section'>
-            <img src={imgUrl} className='profile-pic-small' alt="Adhip Kashyap" />
-            <div className='profile-info'>
-              <h1 className='name'>Adhip Kashyap</h1>
-              <p className='title'>AI Software Engineer at Hoag Hospital</p>
+          {selected !== 'tldr' && (
+            <div className='profile-section'>
+              <img src={imgUrl} className='profile-pic-small' alt="Adhip Kashyap" />
+              <div className='profile-info'>
+                <h1 className='name'>Adhip Kashyap</h1>
+                <p className='title'>AI Software Engineer at Hoag Hospital</p>
+              </div>
             </div>
-          </div>
+          )}
           <nav onKeyDown={handleKeyDown}>
             <div className='button-group' role="tablist">
             <Button
@@ -76,6 +78,13 @@ function App() {
       </header>
 
       <main role="main" className='main-content'>
+        {selected === 'tldr' && (
+          <div className='hero-section'>
+            <img src={imgUrl} className='profile-pic-large' alt="Adhip Kashyap" />
+            <h1 className='hero-name'>Adhip Kashyap</h1>
+            <p className='hero-title'>AI Software Engineer at Hoag Hospital</p>
+          </div>
+        )}
         <Page selected={selected}></Page>
       </main>
     </>

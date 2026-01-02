@@ -1,78 +1,4 @@
-
-
 import { useState, useEffect } from 'react';
-
-const TechList = () => {
-  const techList = [
-    'Python',
-    'PHP',
-    'JavaScript/TypeScript',
-    'nodeJS',
-    'SQL',
-    'Java',
-    'Apache Kafka',
-    'Kubernetes',
-    'C',
-    'C++',
-    'Laravel/Lumen',
-    'ReactJS + Redux',
-    'AngularJS',
-    'AWS',
-    'neo4j',
-    'Docker',
-    'Sentry',
-    'ElasticSearch',
-  ];
-
-  const techAbbreviations: { [key: string]: string } = {
-    Python: 'PY',
-    PHP: 'PHP',
-    'JavaScript/TypeScript': 'JS/TS',
-    nodeJS: 'NodeJS',
-    SQL: 'SQL',
-    Java: 'Java',
-    'Apache Kafka': 'Kafka',
-    Kubernetes: 'K8s',
-    C: 'C',
-    'C++': 'C++',
-    'Laravel/Lumen': 'Laravel/Lumen',
-    'ReactJS + Redux': 'React + Redux',
-    AngularJS: 'AngularJS',
-    AWS: 'AWS',
-    neo4j: 'Neo4j',
-    Docker: 'Docker',
-    Sentry: 'Sentry',
-    ElasticSearch: 'ElasticSearch',
-  };
-
-  const [showFullNames, setShowFullNames] = useState(true);
-
-  const handleResize = () => {
-    setShowFullNames(window.innerWidth > 768);
-  };
-
-  useEffect(() => {
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  const renderTechList = () => {
-    return (
-      <ul className='techs'>
-        {techList.map((tech) => (
-          <li key={tech}>
-            {showFullNames ? tech : techAbbreviations[tech]}
-          </li>
-        ))}
-      </ul>
-    );
-  };
-
-  return <div>{renderTechList()}</div>;
-};
 
 const ResumeEmbed = () => {
   const [resumeHTML, setResumeHTML] = useState<string>('');
@@ -148,10 +74,6 @@ const ResumeEmbed = () => {
 };
 
 export default function LongStory(){
-    const scrollToTop = () => {
-        window.scrollTo({top: 0, behavior: 'smooth'});
-    };
-
     return (
         <div>
             <div style={{padding:'1em 0'}}>
@@ -164,41 +86,7 @@ export default function LongStory(){
                 }}>
                     <ResumeEmbed />
                 </div>
-
-                <h3>Tech I've worked with</h3>
-                <div className='list-container'>
-                <TechList/>
             </div>
-            </div>
-
-            <button
-                onClick={scrollToTop}
-                style={{
-                    marginTop:'2em',
-                    padding:'0.5em 1em',
-                    backgroundColor:'transparent',
-                    border:'1px solid rgba(255,149,0,0.3)',
-                    color:'rgba(255,149,0,0.7)',
-                    borderRadius:'6px',
-                    cursor:'pointer',
-                    fontWeight:'500',
-                    fontSize:'0.9em',
-                    transition:'all 0.15s ease'
-                }}
-                onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(255,149,0,0.08)';
-                    e.currentTarget.style.borderColor = 'rgba(255,149,0,0.5)';
-                    e.currentTarget.style.color = '#ff9500';
-                }}
-                onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                    e.currentTarget.style.borderColor = 'rgba(255,149,0,0.3)';
-                    e.currentTarget.style.color = 'rgba(255,149,0,0.7)';
-                }}
-                title="Scroll back to top"
-            >
-                ↑ Back to Top
-            </button>
 
         </div>
     );
