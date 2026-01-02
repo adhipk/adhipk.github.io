@@ -169,20 +169,6 @@ export default function LongStory(){
                 <div className='list-container'>
                 <TechList/>
             </div>
-
-            <div className="list-container">
-                <div className='flex'>
-                    <h3>Some Courses I've Completed</h3>
-                    <ul>
-                        <li>Combinatorial Algorithms and Intractability</li>
-                        <li>Applied Cryptography</li>
-                        <li>Perception in Robotics</li>
-                        <li>Algorithms in Computation Bio</li>
-                        <li>Data Mining</li>
-                        <li>Data Vizualization</li>
-                    </ul>
-                </div>
-            </div>
             </div>
 
             <button
@@ -190,25 +176,28 @@ export default function LongStory(){
                 style={{
                     marginTop:'2em',
                     padding:'0.5em 1em',
-                    backgroundColor:'rgba(255,149,0,0.2)',
-                    border:'1px solid #ff9500',
-                    color:'#ff9500',
-                    borderRadius:'4px',
+                    backgroundColor:'transparent',
+                    border:'1px solid rgba(255,149,0,0.3)',
+                    color:'rgba(255,149,0,0.7)',
+                    borderRadius:'6px',
                     cursor:'pointer',
-                    fontWeight:'bold',
-                    transition:'all 0.3s'
+                    fontWeight:'500',
+                    fontSize:'0.9em',
+                    transition:'all 0.15s ease'
                 }}
                 onMouseOver={(e) => {
-                    e.currentTarget.style.backgroundColor = '#ff9500';
-                    e.currentTarget.style.color = '#fff';
+                    e.currentTarget.style.backgroundColor = 'rgba(255,149,0,0.08)';
+                    e.currentTarget.style.borderColor = 'rgba(255,149,0,0.5)';
+                    e.currentTarget.style.color = '#ff9500';
                 }}
                 onMouseOut={(e) => {
-                    e.currentTarget.style.backgroundColor = 'rgba(255,149,0,0.2)';
-                    e.currentTarget.style.color = '#ff9500';
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                    e.currentTarget.style.borderColor = 'rgba(255,149,0,0.3)';
+                    e.currentTarget.style.color = 'rgba(255,149,0,0.7)';
                 }}
                 title="Scroll back to top"
             >
-                ⬆️ Back to Top
+                ↑ Back to Top
             </button>
 
         </div>
