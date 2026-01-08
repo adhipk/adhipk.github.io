@@ -15,8 +15,8 @@ const RESUME_URL = 'https://raw.githubusercontent.com/adhipk/resume-reloaded/ref
 const parseExperience = (markdown: string): ExperienceItem[] => {
   const experiences: ExperienceItem[] = [];
   
-  // Find the Work Experience section
-  const workExpMatch = markdown.match(/## Work Experience\s*([\s\S]*?)(?=\n---|\n## )/);
+  // Find the Experience section (handles both "## Experience" and "## Work Experience")
+  const workExpMatch = markdown.match(/## (?:Work )?Experience\s*([\s\S]*?)(?=\n---|\n## )/);
   if (!workExpMatch) return experiences;
   
   const workExpSection = workExpMatch[1];
@@ -53,13 +53,28 @@ const parseExperience = (markdown: string): ExperienceItem[] => {
       }
       if (line.includes('</div>')) {
         inDiv = false;
-        // Parse the div content - first non-empty is role, second is duration
-        const meaningful = divContent.filter(l => l.trim() && !l.includes('<') && !l.includes('>'));
-        if (meaningful.length >= 2) {
-          role = meaningful[0].trim();
-          duration = meaningful[1].trim();
-        } else if (meaningful.length === 1) {
-          role = meaningful[0].trim();
+        // Parse the div content for role and duration
+        for (const content of divContent) {
+          const trimmed = content.trim();
+          if (!trimmed) continue;
+          
+          // Check for <strong>Role</strong> format
+          const strongMatch = trimmed.match(/<strong>([^<]+)<\/strong>/);
+          if (strongMatch) {
+            role = strongMatch[1].trim();
+            continue;
+          }
+          
+          // Check for date pattern (e.g., "Oct 2025 – Present" or "2022 – 2024")
+          if (/\d{4}/.test(trimmed) && !trimmed.includes('<')) {
+            duration = trimmed;
+            continue;
+          }
+          
+          // Fallback: if no role yet and line doesn't look like HTML, use it as role
+          if (!role && !trimmed.includes('<') && !trimmed.includes('>')) {
+            role = trimmed;
+          }
         }
         divContent = [];
         continue;
