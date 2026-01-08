@@ -36,16 +36,14 @@ function App() {
   return (
     <>
       <header className='top-bar'>
-        <div className='top-bar-content'>
-          {selected !== 'tldr' && (
-            <div className='profile-section'>
-              <img src={imgUrl} className='profile-pic-small' alt="Adhip Kashyap" />
-              <div className='profile-info'>
-                <h1 className='name'>Adhip Kashyap</h1>
-                <p className='title'>AI Software Engineer at Hoag Hospital</p>
-              </div>
+        <div className={`top-bar-content ${selected === 'tldr' ? 'centered' : ''}`}>
+          <div className={`profile-section ${selected === 'tldr' ? 'hidden' : ''}`}>
+            <img src={imgUrl} className='profile-pic-small' alt="Adhip Kashyap" />
+            <div className='profile-info'>
+              <h1 className='name'>Adhip Kashyap</h1>
+              <p className='title'>AI Software Engineer at Hoag Hospital</p>
             </div>
-          )}
+          </div>
           <nav onKeyDown={handleKeyDown}>
             <div className='button-group' role="tablist">
             <Button
